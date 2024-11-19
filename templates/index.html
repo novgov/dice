@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="dice">
+    <button class="btn-primary" onclick="rollDice()">Ролл кубика</button>
+    <div id="result"></div>
+</div>
+<script>
+        function rollDice() {
+            fetch('/roll')
+                .then(response => response.text())
+                .then(result => {
+                    document.getElementById('result').innerHTML = '<h3>Результат: <span class="badge bg-primary">' + result + '</span></h3>';
+                });
+        }
+    </script>
+{% endblock %}
