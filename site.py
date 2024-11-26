@@ -22,9 +22,9 @@ db = shelve.open('users.db')
 def index():
     if request.method == 'POST':
         username = request.form['username']
-        date = datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S")
+        date = datetime.utcnow()
         db[username] = date
-        flash(f'Пользователь {username} сохранен {date}')
+        flash(f'Пользователь {username} сохранен в {date.strftime("%H:%M:%S")}')
         return redirect(url_for('index'))
     return render_template('index.html')
 

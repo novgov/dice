@@ -5,16 +5,18 @@
     <form method="POST">
     <input type="text" name="username" required>
     <button type="submit">Сохранить</button>
+        </form>
     {% with messages = get_flashed_messages() %}
     {% if messages%}
-    <ul class="flashes">
+
+    <div class="flashes">
         {% for message in messages %}
-        <li>{{ message }}</li>
+        <p>{{ message }}</p>
         {% endfor %}
-    </ul>
+    </div>
     {% endif %}
     {% endwith %}
-        </form>
+
 
 <div class="element">
     <button class="btn-primary" onclick="rollDice()">Ролл кубика</button>

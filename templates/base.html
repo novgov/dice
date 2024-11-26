@@ -174,11 +174,16 @@ button[type="submit"]:hover {
   transition: all 0.3s ease;
 }
 
-.flashes ul {
-  padding-inline-start: 4px;
+.flashes {
+  position: fixed;
+  top: 25px;
+  right: -10px;
+  z-index: 1000;
+  padding: 15px;
+  transition: opacity 0.3s ease;
 }
 
-.flashes li {
+.flashes p {
   background-color: #e74c3c;
   color: #fff;
   padding: 10px;
@@ -186,7 +191,7 @@ button[type="submit"]:hover {
   margin-bottom: 10px;
 }
 
-.flashes li:nth-child(odd) {
+.flashes p:nth-child(odd) {
   background-color: #2ecc71;
 }
     </style>
