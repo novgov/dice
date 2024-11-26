@@ -1,9 +1,26 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="dice">
+    <h3>Введите имя пользователя</h3>
+    <form method="POST">
+    <input type="text" name="username" required>
+    <button type="submit">Сохранить</button>
+    {% with messages = get_flashed_messages() %}
+    {% if messages%}
+    <ul class="flashes">
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
+        </form>
+
+<div class="element">
     <button class="btn-primary" onclick="rollDice()">Ролл кубика</button>
-    <div id="result"></div>
+    <div id="result">
+        <span></span>
+    </div>
 </div>
 <script>
         function rollDice() {
